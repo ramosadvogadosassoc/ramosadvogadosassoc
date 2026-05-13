@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escritório Ramos Advocacia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; }
+        .logo-font { font-family: 'Playfair Display', serif; }
+
+        .hero {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.18), rgba(0,0,0,0.58)), url('assets/fundo.png');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* ==================== DESKTOP ==================== */
+        .lawyer-heitor {
+            position: absolute;
+            bottom: -100px;
+            left: 4%;
+            z-index: 10;
+            max-height: 135vh;     /* ← Aumente aqui para Web */
+            width: auto;
+        }
+        .lawyer-rafael {
+            position: absolute;
+            bottom: -70px;
+            right: 2%;
+            z-index: 9;
+            max-height: 115vh;     /* ← Aumente aqui para Web */
+            width: auto;
+        }
+
+        /* ==================== MOBILE ==================== */
+        .mobile-lawyers {
+            position: absolute;
+            bottom: -30px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 15px;
+            z-index: 10;
+        }
+        .mobile-heitor {
+            width: 58%;           /* ← Aumente aqui para Mobile */
+            height: auto;
+        }
+        .mobile-rafael {
+            width: 52%;           /* ← Aumente aqui para Mobile */
+            height: auto;
+        }
+
+        .hero-content { position: relative; z-index: 20; }
+
+        .area-card {
+            transition: all 0.4s ease;
+        }
+        .area-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        /* WhatsApp Flutuante */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 9999;
+            background: #25D366;
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- HEADER -->
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 lg:px-6 h-[88px] flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <span class="text-5xl text-amber-800 font-bold logo-font">R</span>
+                <div>
+                    <h1 class="text-2xl font-bold logo-font tracking-tight">RAMOS</h1>
+                    <p class="text-xs text-red-700 -mt-1">ADVOCACIA</p>
+                </div>
+            </div>
+
+            <!-- DESKTOP MENU -->
+            <div class="hidden lg:flex items-center gap-10">
+                <nav class="flex items-center gap-10 font-semibold text-sm uppercase">
+                    <a href="#inicio" class="hover:text-red-700 transition">Início</a>
+                    <a href="#areas" class="hover:text-red-700 transition">Áreas</a>
+                    <a href="#diferenciais" class="hover:text-red-700 transition">Diferenciais</a>
+                    <a href="#contato" class="hover:text-red-700 transition">Contato</a>
+                </nav>
+                <a href="#" onclick="openWhatsApp()" class="bg-red-700 hover:bg-red-800 text-white px-6 py-3 rounded-xl font-semibold flex items-center gap-2 transition">
+                    <i class="fab fa-whatsapp"></i> FALE CONOSCO
+                </a>
+            </div>
+
+            <button onclick="toggleMenu()" class="lg:hidden text-3xl text-gray-800">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- MENU MOBILE -->
+        <div id="mobileNav" class="hidden lg:hidden bg-white border-t shadow-lg">
+            <div class="flex flex-col text-center uppercase font-semibold text-sm py-4">
+                <a href="#inicio" class="py-4 border-b">Início</a>
+                <a href="#areas" class="py-4 border-b">Áreas</a>
+                <a href="#diferenciais" class="py-4 border-b">Diferenciais</a>
+                <a href="#contato" class="py-4 border-b">Contato</a>
+                <div class="px-6 py-6">
+                    <a href="#" onclick="openWhatsApp()" class="bg-red-700 hover:bg-red-800 text-white py-3 px-8 rounded-xl font-semibold flex items-center justify-center gap-2 text-base">
+                        <i class="fab fa-whatsapp text-xl"></i> FALE COM UM ADVOGADO
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section id="inicio" class="hero relative flex items-center">
+        <!-- Desktop -->
+        <img src="assets/rafael.png" alt="Dr. Rafael" class="lawyer-rafael hidden lg:block">
+        <img src="assets/heitor.png" alt="Dr. Heitor" class="lawyer-heitor hidden lg:block">
+
+        <!-- Mobile -->
+        <div class="lg:hidden mobile-lawyers">
+            <img src="assets/heitor.png" alt="Dr. Heitor" class="mobile-heitor">
+            <img src="assets/rafael.png" alt="Dr. Rafael" class="mobile-rafael">
+        </div>
+
+        <div class="hero-content relative z-20 max-w-4xl mx-auto text-center px-6 pt-12 lg:pt-20">
+            <div class="flex justify-center mb-6">
+                <i class="fa-solid fa-scale-balanced text-6xl text-amber-300"></i>
+            </div>
+            <h1 class="logo-font text-5xl md:text-7xl leading-tight text-white">
+                ADVOCACIA QUE<br>
+                <span class="text-red-600">GERA SOLUÇÕES.</span>
+            </h1>
+            <p class="uppercase tracking-[4px] text-sm font-semibold mt-6 text-white">ÉTICA • COMPROMISSO • RESULTADOS</p>
+            
+            <p class="text-white text-lg mt-8 max-w-md mx-auto">
+                Atuamos de forma estratégica e personalizada para defender seus direitos e alcançar os melhores resultados.
+            </p>
+
+            <button onclick="openWhatsApp()" class="mt-10 bg-[#08152d] hover:bg-red-700 text-white font-semibold px-10 py-4 rounded-xl flex items-center gap-3 mx-auto text-lg transition">
+                <i class="fab fa-whatsapp text-2xl"></i>
+                FALE COM UM ADVOGADO
+            </button>
+        </div>
+    </section>
+
+    <!-- WhatsApp Flutuante -->
+    <a href="#" onclick="openWhatsApp()" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ÁREAS DE ATUAÇÃO -->
+    <section id="areas" class="py-24 bg-[#f7f7f7]">
+        <div class="max-w-7xl mx-auto px-4 lg:px-6">
+            <div class="text-center max-w-4xl mx-auto mb-16">
+                <p class="uppercase tracking-[4px] text-red-700 font-semibold mb-4">ÁREAS DE ATUAÇÃO</p>
+                <h2 class="text-3xl lg:text-5xl font-bold text-slate-900 leading-tight logo-font">
+                    Soluções Jurídicas para Proteger o que Mais Importa
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                <div class="area-card bg-white rounded-[28px] p-8 text-center shadow-sm border border-gray-100">
+                    <div class="text-5xl text-red-700 mb-6"><i class="fa-solid fa-users"></i></div>
+                    <h3 class="font-bold text-xl mb-3">Direito de Família</h3>
+                    <p class="text-gray-600">Divórcio, guarda, pensão alimentícia e outras questões.</p>
+                </div>
+                <div class="area-card bg-white rounded-[28px] p-8 text-center shadow-sm border border-gray-100">
+                    <div class="text-5xl text-red-700 mb-6"><i class="fa-solid fa-file-signature"></i></div>
+                    <h3 class="font-bold text-xl mb-3">Inventários e Sucessões</h3>
+                    <p class="text-gray-600">Planejamento sucessório, inventário judicial e extrajudicial.</p>
+                </div>
+                <div class="area-card bg-white rounded-[28px] p-8 text-center shadow-sm border border-gray-100">
+                    <div class="text-5xl text-red-700 mb-6"><i class="fa-solid fa-house"></i></div>
+                    <h3 class="font-bold text-xl mb-3">Direito Imobiliário</h3>
+                    <p class="text-gray-600">Compra e venda, contratos, usucapião e regularizações.</p>
+                </div>
+                <div class="area-card bg-white rounded-[28px] p-8 text-center shadow-sm border border-gray-100">
+                    <div class="text-5xl text-red-700 mb-6"><i class="fa-solid fa-building-columns"></i></div>
+                    <h3 class="font-bold text-xl mb-3">Direito Previdenciário</h3>
+                    <p class="text-gray-600">Aposentadorias, benefícios e revisões junto ao INSS.</p>
+                </div>
+                <div class="area-card bg-white rounded-[28px] p-8 text-center shadow-sm border border-gray-100">
+                    <div class="text-5xl text-red-700 mb-6"><i class="fa-solid fa-briefcase"></i></div>
+                    <h3 class="font-bold text-xl mb-3">Direito Civil</h3>
+                    <p class="text-gray-600">Contratos, responsabilidade civil e indenizações.</p>
+                </div>
+                <div class="area-card bg-white rounded-[28px] p-8 text-center shadow-sm border border-gray-100">
+                    <div class="text-5xl text-red-700 mb-6"><i class="fa-solid fa-ellipsis"></i></div>
+                    <h3 class="font-bold text-xl mb-3">Outras Áreas</h3>
+                    <p class="text-gray-600">Soluções jurídicas personalizadas para cada necessidade.</p>
+                </div>
+            </div>
+
+            <div class="flex justify-center mt-16">
+                <button class="border-2 border-red-700 text-red-700 hover:bg-red-700 hover:text-white px-12 py-5 rounded-2xl font-semibold text-lg transition">
+                    VER TODAS AS ÁREAS
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIFERENCIAIS -->
+    <section id="diferenciais" class="bg-[#041327] text-white py-24">
+        <div class="max-w-7xl mx-auto px-4 lg:px-6 grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
+            <div>
+                <i class="fa-solid fa-shield-halved text-6xl text-amber-400 mb-6"></i>
+                <h3 class="logo-font text-3xl mb-4">Compromisso</h3>
+                <p class="text-gray-300">Atendimento próximo e dedicado.</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-bullseye text-6xl text-amber-400 mb-6"></i>
+                <h3 class="logo-font text-3xl mb-4">Estratégia</h3>
+                <p class="text-gray-300">Análise técnica e estratégias eficazes.</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-handshake text-6xl text-amber-400 mb-6"></i>
+                <h3 class="logo-font text-3xl mb-4">Transparência</h3>
+                <p class="text-gray-300">Relação baseada em confiança e clareza.</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-trophy text-6xl text-amber-400 mb-6"></i>
+                <h3 class="logo-font text-3xl mb-4">Resultados</h3>
+                <p class="text-gray-300">Foco em soluções concretas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="bg-white">
+        <div class="border-y border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 lg:px-6 py-10">
+                <div class="grid grid-cols-2 lg:grid-cols-5 gap-6">
+                    <div class="flex gap-5 p-6 border border-gray-100 rounded-2xl">
+                        <div class="text-4xl text-[#9d1d24]"><i class="fa-solid fa-location-dot"></i></div>
+                        <div>
+                            <h4 class="font-bold uppercase text-[#08152d]">Endereço</h4>
+                            <p class="text-gray-600 mt-2 text-sm">Rua das Flores, 123<br>Sala 801 - Centro<br>São Paulo/SP<br>CEP 01000-000</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-5 p-6 border border-gray-100 rounded-2xl">
+                        <div class="text-4xl text-[#9d1d24]"><i class="fab fa-whatsapp"></i></div>
+                        <div>
+                            <h4 class="font-bold uppercase text-[#08152d]">WhatsApp</h4>
+                            <p class="text-gray-600 mt-2 text-sm">(11) 99999-9999</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-5 p-6 border border-gray-100 rounded-2xl">
+                        <div class="text-4xl text-[#9d1d24]"><i class="fa-regular fa-envelope"></i></div>
+                        <div class="min-w-0">
+                            <h4 class="font-bold uppercase text-[#08152d]">E-mail</h4>
+                            <p class="text-gray-600 mt-2 text-sm break-words">contato@escritorioramos.adv.br</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-5 p-6 border border-gray-100 rounded-2xl">
+                        <div class="text-4xl text-[#9d1d24]"><i class="fa-regular fa-clock"></i></div>
+                        <div>
+                            <h4 class="font-bold uppercase text-[#08152d]">Horário</h4>
+                            <p class="text-gray-600 mt-2 text-sm">Segunda a Sexta<br>09h às 18h</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-5 p-6 border border-gray-100 rounded-2xl">
+                        <div class="text-4xl text-[#9d1d24]"><i class="fa-regular fa-file-lines"></i></div>
+                        <div>
+                            <h4 class="font-bold uppercase text-[#08152d]">OAB/SP</h4>
+                            <p class="text-gray-600 mt-2 text-sm">Advocacia com ética e compromisso</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="bg-[#041327] text-white py-10">
+            <div class="max-w-7xl mx-auto px-4 lg:px-6">
+                <div class="flex flex-col lg:flex-row items-center justify-between gap-6">
+                    <div class="flex flex-col lg:flex-row items-center gap-5">
+                        <img src="assets/logo.jfif" alt="Logo" class="h-20 object-contain">
+                        <div>
+                            <p class="text-gray-300">© 2026 Escritório Ramos Advocacia</p>
+                            <a href="https://www.santanatechsp.com.br" target="_blank" class="text-amber-400 hover:text-white text-sm">
+                                Desenvolvimento por Santana Tech SP
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('mobileNav').classList.toggle('hidden');
+        }
+
+        function openWhatsApp() {
+            window.open('https://wa.me/5511999999999?text=Olá! Gostaria de mais informações.', '_blank');
+        }
+    </script>
+</body>
+</html>
