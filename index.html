@@ -24,42 +24,59 @@
         }
 
         /* ==================== DESKTOP ==================== */
-        .lawyer-heitor {
-            position: absolute;
-            bottom: -100px;
-            left: 4%;
-            z-index: 10;
-            max-height: 135vh;     /* ← Aumente aqui para Web */
-            width: auto;
-        }
-        .lawyer-rafael {
-            position: absolute;
-            bottom: -100px;
-            right: 4%;
-            z-index: 10;
-            max-height: 135vh;     /* ← Aumente aqui para Web */
-            width: auto;
-        }
+.lawyer-heitor,
+.lawyer-rafael {
+    position: absolute;
+    bottom: 0;
+    z-index: 10;
+    height: 88vh;
+    width: auto;
+    object-fit: contain;
+}
 
-        /* ==================== MOBILE ==================== */
-        .mobile-lawyers {
-            position: absolute;
-            bottom: -30px;
-            left: 0;
-            right: 0;
-            display: flex;
-            justify-content: space-between;
-            padding: 0 15px;
-            z-index: 10;
-        }
-        .mobile-heitor {
-            width: 58%;           /* ← Aumente aqui para Mobile */
-            height: auto;
-        }
-        .mobile-rafael {
-            width: 58%;           /* ← Aumente aqui para Mobile */
-            height: auto;
-        }
+.lawyer-heitor {
+    left: 0;
+}
+
+.lawyer-rafael {
+    right: 0;
+}
+
+/* ==================== MOBILE ==================== */
+.mobile-lawyers {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 10px;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.mobile-heitor,
+.mobile-rafael {
+    width: 48%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Ajustes extras mobile */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 92vh;
+    }
+
+    .mobile-heitor {
+        transform: translateX(-8px);
+    }
+
+    .mobile-rafael {
+        transform: translateX(8px);
+    }
+}
 
         .hero-content { position: relative; z-index: 20; }
 
@@ -142,14 +159,32 @@
     <!-- HERO -->
     <section id="inicio" class="hero relative flex items-center">
         <!-- Desktop -->
-        <img src="assets/rafael.png" alt="Dr. Rafael" class="lawyer-rafael hidden lg:block">
-        <img src="assets/heitor.png" alt="Dr. Heitor" class="lawyer-heitor hidden lg:block">
+       <img 
+    src="assets/heitor.png" 
+    alt="Dr. Heitor" 
+    class="lawyer-heitor hidden lg:block"
+>
+
+<img 
+    src="assets/rafael.png" 
+    alt="Dr. Rafael" 
+    class="lawyer-rafael hidden lg:block"
+>
 
         <!-- Mobile -->
         <div class="lg:hidden mobile-lawyers">
-            <img src="assets/heitor.png" alt="Dr. Heitor" class="mobile-heitor">
-            <img src="assets/rafael.png" alt="Dr. Rafael" class="mobile-rafael">
-        </div>
+    <img 
+        src="assets/heitor.png" 
+        alt="Dr. Heitor" 
+        class="mobile-heitor"
+    >
+
+    <img 
+        src="assets/rafael.png" 
+        alt="Dr. Rafael" 
+        class="mobile-rafael"
+    >
+</div>
 
         <div class="hero-content relative z-20 max-w-4xl mx-auto text-center px-6 pt-0 lg:pt-2 -mt-55 lg:-mt-80">
     
