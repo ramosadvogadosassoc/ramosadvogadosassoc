@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quem Somos | Ramos Advogados Associados</title>
+
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    >
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .logo-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .lawyer-card {
+            transition: all 0.35s ease;
+        }
+
+        .lawyer-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 45px rgba(0,0,0,0.10);
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 9999;
+            background: #25D366;
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.08);
+            background: #1ebe5d;
+        }
+
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                width: 56px;
+                height: 56px;
+                font-size: 28px;
+                right: 18px;
+                bottom: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-slate-900">
+
+    <!-- HEADER -->
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 lg:px-6 h-[88px] flex items-center justify-between">
+
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-3">
+                <img 
+                    src="assets/logo.png" 
+                    alt="Logo Ramos Advocacia" 
+                    class="h-20 w-auto object-contain"
+                >
+            </a>
+
+            <!-- Menu Desktop -->
+            <div class="hidden lg:flex items-center gap-10">
+                <nav class="flex items-center gap-10 font-semibold text-sm uppercase">
+                    <a href="index.html#inicio" class="hover:text-red-700 transition">Início</a>
+                    <a href="index.html#areas" class="hover:text-red-700 transition">Áreas</a>
+                    <a href="quem-somos.html" class="text-red-700 transition">Quem Somos</a>
+                    <a href="index.html#contato" class="hover:text-red-700 transition">Contato</a>
+                </nav>
+
+                <a 
+                    href="#" 
+                    onclick="openWhatsAppContato()" 
+                    class="bg-red-700 hover:bg-red-800 text-white px-6 py-3 rounded-xl font-semibold flex items-center gap-2 transition"
+                >
+                    <i class="fab fa-whatsapp"></i> FALE CONOSCO
+                </a>
+            </div>
+
+            <!-- Botão Mobile -->
+            <button onclick="toggleMenu()" class="lg:hidden text-3xl text-gray-800">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Menu Mobile -->
+        <div id="mobileNav" class="hidden lg:hidden bg-white border-t shadow-lg">
+            <div class="flex flex-col text-center uppercase font-semibold text-sm py-4">
+                <a href="index.html#inicio" class="py-4 border-b">Início</a>
+                <a href="index.html#areas" class="py-4 border-b">Áreas</a>
+                <a href="quem-somos.html" class="py-4 border-b text-red-700">Quem Somos</a>
+                <a href="index.html#contato" class="py-4 border-b">Contato</a>
+
+                <div class="px-6 py-6">
+                    <a 
+                        href="#" 
+                        onclick="openWhatsAppContato()" 
+                        class="bg-red-700 hover:bg-red-800 text-white py-3 px-8 rounded-xl font-semibold flex items-center justify-center gap-2 text-base"
+                    >
+                        <i class="fab fa-whatsapp text-xl"></i> FALE COM UM ADVOGADO
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- WhatsApp Flutuante -->
+    <a href="#" onclick="openWhatsAppContato()" class="whatsapp-float" aria-label="Fale conosco pelo WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- HERO QUEM SOMOS -->
+    <section class="bg-[#041327] text-white py-20 lg:py-28">
+        <div class="max-w-5xl mx-auto px-4 lg:px-6 text-center">
+
+            <p class="uppercase tracking-[4px] text-red-300 font-semibold mb-5">
+                Ramos Advogados Associados
+            </p>
+
+            <h1 class="logo-font text-4xl lg:text-6xl font-bold leading-tight mb-8">
+                Quem Somos
+            </h1>
+
+            <p class="text-gray-200 text-base lg:text-xl leading-relaxed max-w-4xl mx-auto mb-10">
+                Construído e gerenciado por pai e filho, nosso escritório tornou-se
+                uma extensão do nosso núcleo familiar. De modo que honestidade,
+                empatia, humanidade, compaixão e profissionalismo são valores
+                indispensáveis na forma como conduzimos nossa equipe e nos
+                relacionamos com nossos clientes.
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a 
+                    href="#" 
+                    onclick="openWhatsAppContato()" 
+                    class="bg-red-700 hover:bg-red-800 text-white px-8 lg:px-10 py-4 rounded-xl font-semibold transition inline-flex items-center gap-3"
+                >
+                    <i class="fab fa-whatsapp text-xl"></i>
+                    FALE CONOSCO
+                </a>
+
+                <a 
+                    href="index.html#areas" 
+                    class="bg-white text-[#041327] hover:bg-gray-100 px-8 lg:px-10 py-4 rounded-xl font-semibold transition inline-flex items-center gap-3"
+                >
+                    <i class="fa-solid fa-scale-balanced"></i>
+                    VER ÁREAS DE ATUAÇÃO
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- APRESENTAÇÃO -->
+    <section class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 lg:px-6 space-y-16 lg:space-y-20">
+
+            <!-- DR. HEITOR -->
+            <div class="lawyer-card bg-white border border-gray-100 rounded-[28px] shadow-sm overflow-hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
+
+                    <!-- Foto -->
+                    <div class="bg-[#f7f7f7] flex items-end justify-center p-8 lg:p-12">
+                        <img 
+                            src="assets/heitor.png" 
+                            alt="Dr. Heitor Ramos" 
+                            class="max-h-[520px] w-auto object-contain"
+                        >
+                    </div>
+
+                    <!-- Texto -->
+                    <div class="p-7 lg:p-12 flex flex-col justify-center">
+                        <p class="uppercase tracking-[3px] text-red-700 font-semibold text-sm mb-3">
+                            Advogado
+                        </p>
+
+                        <h2 class="logo-font text-3xl lg:text-5xl font-bold text-[#08152d] mb-6">
+                            Dr. Heitor Ramos
+                        </h2>
+
+                        <p class="text-gray-700 text-sm lg:text-base leading-relaxed mb-8">
+                            Formado pela UNIFAI - PUC/SP, atua há mais de duas décadas
+                            em Direito Civil, Direito Sucessório, Direito Imobiliário e Direito Penal,
+                            especializado em Tribunal do Júri. Já figurou como sócio de outros dois
+                            escritórios, quando, há alguns anos, separou-se amigavelmente de seu antigo
+                            sócio para iniciar uma sociedade com seu filho, um sonho e planejamento da
+                            família.
+                        </p>
+
+                        <h3 class="font-bold uppercase text-[#08152d] text-sm lg:text-base mb-4">
+                            Procedimentos Judiciais Costumeiros:
+                        </h3>
+
+                        <ul class="space-y-3 text-gray-700 text-sm lg:text-base leading-relaxed mb-8">
+                            <li class="flex gap-3">
+                                <i class="fa-solid fa-check text-red-700 mt-1"></i>
+                                <span>Inventários Judiciais e Extrajudiciais</span>
+                            </li>
+
+                            <li class="flex gap-3">
+                                <i class="fa-solid fa-check text-red-700 mt-1"></i>
+                                <span>Doações e Testamentos</span>
+                            </li>
+
+                            <li class="flex gap-3">
+                                <i class="fa-solid fa-check text-red-700 mt-1"></i>
+                                <span>Recuperação de valores em financiamentos imobiliários não concluídos</span>
+                            </li>
+
+                            <li class="flex gap-3">
+                                <i class="fa-solid fa-check text-red-700 mt-1"></i>
+                                <span>Ações indenizatórias por danos materiais, morais e estéticos</span>
+                            </li>
+
+                            <li class="flex gap-3">
+                                <i class="fa-solid fa-check text-red-700 mt-1"></i>
+                                <span>Ações contra plano de saúde, incluindo recusa de cobertura, erros médicos e revisão de aumentos</span>
+                            </li>
+
+                            <li class="flex gap-3">
+                                <i class="fa-solid fa-check text-red-700 mt-1"></i>
+                                <span>Atuação em Tribunal do Júri</span>
+                            </li>
+
+                            <li class="flex gap-3">
+                                <i class="fa-solid fa-check text-red-700 mt-1"></i>
+                                <span>Defesas em ações cíveis</span>
+                            </li>
+
+                            <li class="flex gap-3">
+                                <i class="fa-solid fa-check text-red-700 mt-1"></i>
+                                <span>Interdições e Curatelas</span>
+                            </li>
+
+                            <li class="flex gap-3">
+                                <i class="fa-solid fa-check text-red-700 mt-1"></i>
+                                <span>Contratos</span>
+                            </li>
+                        </ul>
+
+                        <a 
+                            href="#" 
+                            onclick="openWhatsAppContato()" 
+                            class="bg-red-700 hover:bg-red-800 text-white px-7 py-4 rounded-xl font-semibold transition inline-flex items-center justify-center gap-3 w-full sm:w-fit"
+                        >
+                            <i class="fab fa-whatsapp text-xl"></i>
+                            FALAR COM O ESCRITÓRIO
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- CTA INTERMEDIÁRIO -->
+            <div class="bg-[#041327] text-white rounded-[28px] p-8 lg:p-12 text-center">
+                <p class="uppercase tracking-[4px] text-red-300 font-semibold mb-4">
+                    Atendimento personalizado
+                </p>
+
+                <h2 class="logo-font text-3xl lg:text-5xl font-bold mb-6">
+                    Precisa de orientação jurídica?
+                </h2>
+
+                <p class="text-gray-200 text-base lg:text-lg leading-relaxed max-w-3xl mx-auto mb-8">
+                    Nossa equipe está disponível para ouvir seu caso e indicar o melhor caminho jurídico.
+                </p>
+
+                <a 
+                    href="#" 
+                    onclick="openWhatsAppContato()" 
+                    class="bg-red-700 hover:bg-red-800 text-white px-8 lg:px-12 py-4 lg:py-5 rounded-2xl font-semibold text-sm lg:text-lg transition inline-flex items-center gap-3"
+                >
+                    <i class="fab fa-whatsapp text-xl"></i>
+                    FALE CONOSCO PELO WHATSAPP
+                </a>
+            </div>
+
+            <!-- DR. RAFAEL -->
+            <div class="lawyer-card bg-white border border-gray-100 rounded-[28px] shadow-sm overflow-hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
+
+                    <!-- Texto -->
+                    <div class="p-7 lg:p-12 flex flex-col justify-center order-2 lg:order-1">
+                        <p class="uppercase tracking-[3px] text-red-700 font-semibold text-sm mb-3">
+                            Advogado
+                        </p>
+
+                        <h2 class="logo-font text-3xl lg:text-5xl font-bold text-[#08152d] mb-6">
+                            Dr. Rafael Giancoli Ramos
+                        </h2>
+
+                        <p class="text-gray-700 text-sm lg:text-base leading-relaxed mb-8">
+                            Formado pela Universidade Presbiteriana Mackenzie, já trabalhava em
+                            litígios complexos antes mesmo de terminar sua graduação. Especializado em
+                            Direito Civil, Direito Bancário, Direito Securitário e Direito Sucessório.
+                        </p>
+
+                        <h3 class="font-bold uppercase text-[#08152d] text-sm lg:text-base mb-4">
+                            Procedimentos Judiciais Costumeiros:
+                        </h3>
+
+                        <ul class="space-y-3 text-gray-700 text-sm lg:text-base leading-relaxed mb-8">
+                            <li class="flex gap-3">
+                                <i class="fa-solid fa-check text-red-700 mt-1"></i>
+                                <span>Inventários Judiciais e Extrajudiciais</span>
+                            </li>
+
+                            <li class="flex gap-3">
+                                <i class="fa-solid fa-check text-red-700 mt-1"></i>
+                                <span>Ações de natureza civil, processando e defendendo clientes</span>
+                            </li>
+
+                            <li class="flex gap-3">
+                                <i class="fa-solid fa-check text-red-700 mt-1"></i>
+                                <span>Recuperação de valores em financiamentos imobiliários não concluídos</span>
+                            </li>
+
+                            <li class="flex gap-3">
+                                <i class="fa-solid fa-check text-red-700 mt-1"></i>
+                                <span>Direito Bancário, incluindo fraudes bancárias</span>
+                            </li>
+
+                            <li class="flex gap-3">
+                                <i class="fa-solid fa-check text-red-700 mt-1"></i>
+                                <span>Direito Securitário, incluindo recusas em cobertura de seguros</span>
+                            </li>
+
+                            <li class="flex gap-3">
+                                <i class="fa-solid fa-check text-red-700 mt-1"></i>
+                                <span>Ações indenizatórias por danos materiais, morais e estéticos</span>
+                            </li>
+
+                            <li class="flex gap-3">
+                                <i class="fa-solid fa-check text-red-700 mt-1"></i>
+                                <span>Doações e Testamentos</span>
+                            </li>
+
+                            <li class="flex gap-3">
+                                <i class="fa-solid fa-check text-red-700 mt-1"></i>
+                                <span>Contratos</span>
+                            </li>
+                        </ul>
+
+                        <a 
+                            href="#" 
+                            onclick="openWhatsAppContato()" 
+                            class="bg-red-700 hover:bg-red-800 text-white px-7 py-4 rounded-xl font-semibold transition inline-flex items-center justify-center gap-3 w-full sm:w-fit"
+                        >
+                            <i class="fab fa-whatsapp text-xl"></i>
+                            FALAR COM O ESCRITÓRIO
+                        </a>
+                    </div>
+
+                    <!-- Foto -->
+                    <div class="bg-[#f7f7f7] flex items-end justify-center p-8 lg:p-12 order-1 lg:order-2">
+                        <img 
+                            src="assets/rafael.png" 
+                            alt="Dr. Rafael Giancoli Ramos" 
+                            class="max-h-[520px] w-auto object-contain"
+                        >
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="bg-[#f7f7f7] py-20">
+        <div class="max-w-4xl mx-auto px-4 lg:px-6 text-center">
+
+            <p class="uppercase tracking-[4px] text-red-700 font-semibold mb-4">
+                Atendimento jurídico
+            </p>
+
+            <h2 class="logo-font text-3xl lg:text-5xl font-bold text-[#08152d] mb-6">
+                Fale com Ramos Advogados Associados
+            </h2>
+
+            <p class="text-gray-600 text-base lg:text-lg leading-relaxed mb-10">
+                Entre em contato pelo WhatsApp para explicar seu caso e receber orientação inicial.
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a 
+                    href="#" 
+                    onclick="openWhatsAppContato()" 
+                    class="bg-red-700 hover:bg-red-800 text-white px-8 lg:px-12 py-4 lg:py-5 rounded-2xl font-semibold text-sm lg:text-lg transition inline-flex items-center gap-3"
+                >
+                    <i class="fab fa-whatsapp text-xl"></i>
+                    FALE CONOSCO
+                </a>
+
+                <a 
+                    href="index.html#contato" 
+                    class="border-2 border-[#08152d] text-[#08152d] hover:bg-[#08152d] hover:text-white px-8 lg:px-12 py-4 lg:py-5 rounded-2xl font-semibold text-sm lg:text-lg transition inline-flex items-center gap-3"
+                >
+                    <i class="fa-regular fa-address-book"></i>
+                    VER CONTATOS
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#041327] text-white py-10">
+        <div class="max-w-7xl mx-auto px-4 lg:px-6">
+
+            <div class="flex flex-col items-center justify-center text-center gap-5">
+
+                <img 
+                    src="assets/logo.png" 
+                    alt="Logo Ramos Advogados Associados" 
+                    class="h-20 object-contain"
+                >
+
+                <div class="flex flex-col items-center gap-2">
+                    <p class="text-gray-300">
+                        © 2026 Ramos Advogados Associados
+                    </p>
+
+                    <a 
+                        href="https://www.santanatechsp.com.br" 
+                        target="_blank" 
+                        class="text-amber-400 hover:text-white text-sm transition"
+                    >
+                        Desenvolvimento por Santana Tech SP
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('mobileNav').classList.toggle('hidden');
+        }
+
+        function openWhatsAppContato() {
+            const mensagem = 'Olá Ramos, vim pelo site, gostaria de falar com um advogado.';
+            const url = 'https://wa.me/5511972923459?text=' + encodeURIComponent(mensagem);
+            window.open(url, '_blank');
+        }
+    </script>
+
+</body>
+</html>
