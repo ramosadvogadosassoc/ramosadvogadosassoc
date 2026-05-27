@@ -41,23 +41,27 @@
         }
 
         /* ==================== DESKTOP ==================== */
-        .lawyer-heitor,
-        .lawyer-rafael {
-            position: absolute;
-            bottom: 0;
-            z-index: 10;
-            height: 88vh;
-            width: auto;
-            object-fit: contain;
-        }
+        /* ==================== DESKTOP ==================== */
+.lawyer-heitor,
+.lawyer-rafael {
+    position: absolute;
+    bottom: 0;
+    z-index: 10;
+    width: auto;
+    object-fit: contain;
+}
 
-        .lawyer-heitor {
-            left: 0;
-        }
+/* Heitor */
+.lawyer-heitor {
+    left: 0;
+    height: 88vh;
+}
 
-        .lawyer-rafael {
-            right: 0;
-        }
+/* Rafael ajustado para ficar visualmente no mesmo tamanho */
+.lawyer-rafael {
+    right: 0;
+    height: 96vh;
+}
 
         /* ==================== MOBILE ==================== */
         .mobile-lawyers {
@@ -74,12 +78,21 @@
         }
 
         .mobile-heitor,
-        .mobile-rafael {
-            width: 72%;
-            height: auto;
-            object-fit: contain;
-            max-width: none;
-        }
+.mobile-rafael {
+    height: auto;
+    object-fit: contain;
+    max-width: none;
+}
+
+/* Mobile: Heitor */
+.mobile-heitor {
+    width: 72%;
+}
+
+/* Mobile: Rafael maior para equilibrar com Heitor */
+.mobile-rafael {
+    width: 84%;
+}
 
         @media (max-width: 768px) {
             .hero {
