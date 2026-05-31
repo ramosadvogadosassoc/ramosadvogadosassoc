@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventário | Ramos Advogados Associados</title>
+
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    >
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f7f7f7;
+            color: #08152d;
+        }
+
+        .logo-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .premium-bg {
+            background:
+                radial-gradient(circle at top left, rgba(157, 29, 36, 0.12), transparent 34%),
+                linear-gradient(135deg, #041327 0%, #08152d 48%, #111827 100%);
+        }
+
+        .content-card {
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+
+        .highlight-text {
+            color: #08152d;
+            font-weight: 800;
+            text-decoration: underline;
+            text-decoration-color: rgba(157, 29, 36, 0.35);
+            text-decoration-thickness: 4px;
+            text-underline-offset: 5px;
+        }
+
+        .info-card {
+            transition: all 0.35s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 22px 45px rgba(0,0,0,0.08);
+        }
+
+        .video-box {
+            background:
+                radial-gradient(circle at center, rgba(157, 29, 36, 0.14), transparent 55%),
+                linear-gradient(180deg, #f9fafb 0%, #f3f4f6 100%);
+        }
+
+        .video-frame {
+            width: 100%;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.18);
+            background: #000;
+        }
+
+        .video-frame video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 220px;
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 16px;
+            box-shadow: 0 18px 35px rgba(0,0,0,0.12);
+            padding: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.25s ease;
+            z-index: 100;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 14px;
+            border-radius: 12px;
+            color: #08152d;
+            font-size: 13px;
+            font-weight: 700;
+            transition: all 0.25s ease;
+            white-space: nowrap;
+        }
+
+        .dropdown-menu a:hover {
+            background: rgba(157, 29, 36, 0.08);
+            color: #9d1d24;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 9999;
+            background: #25D366;
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.08);
+            background: #1ebe5d;
+        }
+
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                width: 56px;
+                height: 56px;
+                font-size: 28px;
+                right: 18px;
+                bottom: 18px;
+            }
+
+            .highlight-text {
+                text-decoration-thickness: 3px;
+                text-underline-offset: 4px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 lg:px-6 h-[88px] flex items-center justify-between">
+
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-3">
+                <img 
+                    src="assets/logo.png" 
+                    alt="Logo Ramos Advocacia" 
+                    class="h-20 w-auto object-contain"
+                >
+            </a>
+
+            <!-- Menu Desktop -->
+            <div class="hidden lg:flex items-center gap-10">
+                <nav class="flex items-center gap-10 font-semibold text-sm uppercase">
+                    <a href="index.html#inicio" class="hover:text-red-700 transition">Início</a>
+
+                    <div class="dropdown">
+                        <button class="hover:text-red-700 transition uppercase font-semibold flex items-center gap-2">
+                            Áreas
+                            <i class="fa-solid fa-chevron-down text-xs"></i>
+                        </button>
+
+                        <div class="dropdown-menu">
+                            <a href="inventario.html">
+                                <i class="fa-solid fa-file-signature text-red-700"></i>
+                                Inventário
+                            </a>
+                        </div>
+                    </div>
+
+                    <a href="quem-somos.html" class="hover:text-red-700 transition">Quem Somos</a>
+                    <a href="index.html#contato" class="hover:text-red-700 transition">Contato</a>
+                </nav>
+
+                <a 
+                    href="#" 
+                    onclick="openWhatsAppContato()" 
+                    class="bg-red-700 hover:bg-red-800 text-white px-6 py-3 rounded-xl font-semibold flex items-center gap-2 transition"
+                >
+                    <i class="fab fa-whatsapp"></i> FALE CONOSCO
+                </a>
+            </div>
+
+            <!-- Botão Mobile -->
+            <button onclick="toggleMenu()" class="lg:hidden text-3xl text-gray-800">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- MENU MOBILE -->
+        <div id="mobileNav" class="hidden lg:hidden bg-white border-t shadow-lg">
+            <div class="flex flex-col text-center uppercase font-semibold text-sm py-4">
+                <a href="index.html#inicio" onclick="closeMenu()" class="py-4 border-b">Início</a>
+
+                <button onclick="toggleAreasMenu()" class="py-4 border-b uppercase font-semibold flex items-center justify-center gap-2">
+                    Áreas
+                    <i class="fa-solid fa-chevron-down text-xs"></i>
+                </button>
+
+                <div id="mobileAreasMenu" class="hidden bg-gray-50 border-b">
+                    <a href="inventario.html" class="py-4 flex items-center justify-center gap-2 text-red-700">
+                        <i class="fa-solid fa-file-signature"></i>
+                        Inventário
+                    </a>
+                </div>
+
+                <a href="quem-somos.html" onclick="closeMenu()" class="py-4 border-b">Quem Somos</a>
+                <a href="index.html#contato" onclick="closeMenu()" class="py-4 border-b">Contato</a>
+
+                <div class="px-6 py-6">
+                    <a 
+                        href="#" 
+                        onclick="openWhatsAppContato()" 
+                        class="bg-red-700 hover:bg-red-800 text-white py-3 px-8 rounded-xl font-semibold flex items-center justify-center gap-2 text-base"
+                    >
+                        <i class="fab fa-whatsapp text-xl"></i> FALE COM UM ADVOGADO
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- WhatsApp Flutuante -->
+    <a href="#" onclick="openWhatsAppContato()" class="whatsapp-float" aria-label="Fale conosco pelo WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- HERO -->
+    <section class="premium-bg text-white py-20 lg:py-28 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-10 left-10 w-72 h-72 border border-white/30 rounded-full"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 border border-white/20 rounded-full"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 lg:px-6">
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+
+                <div class="lg:col-span-5">
+                    <p class="uppercase tracking-[5px] text-red-300 font-semibold mb-5 text-sm">
+                        Área de atuação
+                    </p>
+
+                    <h1 class="logo-font text-4xl lg:text-6xl font-bold leading-tight mb-6">
+                        Inventário
+                    </h1>
+
+                    <div class="w-24 h-1 bg-red-700 rounded-full mb-7"></div>
+
+                    <p class="text-gray-200 text-base lg:text-lg leading-relaxed">
+                        Segurança jurídica para a transmissão do patrimônio familiar, com orientação técnica em cada etapa do processo.
+                    </p>
+
+                    <div class="mt-8">
+                        <a 
+                            href="#" 
+                            onclick="openWhatsAppInventario()" 
+                            class="bg-red-700 hover:bg-red-800 text-white px-8 lg:px-10 py-4 rounded-xl font-semibold transition inline-flex items-center gap-3"
+                        >
+                            <i class="fab fa-whatsapp text-xl"></i>
+                            FALE COM UM ADVOGADO
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <div class="content-card rounded-[32px] p-7 lg:p-10 shadow-2xl">
+                        <i class="fa-solid fa-file-signature text-red-700 text-4xl mb-6"></i>
+
+                        <h2 class="logo-font text-3xl lg:text-4xl font-bold text-[#08152d] mb-6">
+                            Proteção, agilidade e tranquilidade para os herdeiros.
+                        </h2>
+
+                        <p class="text-gray-700 text-base lg:text-xl leading-relaxed">
+                            O processo de inventário é um passo decisivo para garantir a transmissão segura do patrimônio familiar.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <section class="py-20 lg:py-28 bg-[#f7f7f7]">
+        <div class="max-w-7xl mx-auto px-4 lg:px-6">
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+
+                <!-- Texto -->
+                <div class="lg:col-span-6">
+                    <p class="uppercase tracking-[4px] text-red-700 font-semibold mb-4">
+                        Inventário Judicial e Extrajudicial
+                    </p>
+
+                    <h2 class="logo-font text-3xl lg:text-5xl font-bold text-[#08152d] leading-tight mb-7">
+                        Um processo que exige cuidado técnico e responsabilidade.
+                    </h2>
+
+                    <div class="space-y-6 text-gray-700 text-base lg:text-lg leading-relaxed">
+                        <p>
+                            O processo de inventário é um passo decisivo para garantir a transmissão segura do patrimônio familiar.
+                        </p>
+
+                        <p>
+                            Contratar um advogado experiente é o diferencial para 
+                            <span class="highlight-text">proteger os herdeiros de erros fiscais e atrasos burocráticos</span>
+                            que poderiam comprometer o patrimônio construído ao longo de uma vida.
+                        </p>
+
+                        <p>
+                            Com orientação adequada, é possível conduzir o inventário com mais organização, clareza e segurança,
+                            <span class="highlight-text">oferecendo a segurança jurídica necessária para que a herança seja recebida de forma ágil, tranquila e eficiente.</span>
+                        </p>
+                    </div>
+
+                    <div class="mt-10 flex flex-col sm:flex-row gap-4">
+                        <a 
+                            href="#" 
+                            onclick="openWhatsAppInventario()" 
+                            class="bg-red-700 hover:bg-red-800 text-white px-8 lg:px-10 py-4 rounded-xl font-semibold transition inline-flex items-center justify-center gap-3"
+                        >
+                            <i class="fab fa-whatsapp text-xl"></i>
+                            FALE COM UM ADVOGADO
+                        </a>
+
+                        <a 
+                            href="quem-somos.html" 
+                            class="border-2 border-[#08152d] text-[#08152d] hover:bg-[#08152d] hover:text-white px-8 lg:px-10 py-4 rounded-xl font-semibold transition inline-flex items-center justify-center gap-3"
+                        >
+                            <i class="fa-solid fa-user-tie"></i>
+                            CONHEÇA O ESCRITÓRIO
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Vídeo -->
+                <div class="lg:col-span-6">
+                    <div class="video-box rounded-[32px] p-4 lg:p-6 shadow-sm border border-gray-100">
+                        <div class="video-frame">
+                            <video controls playsinline preload="metadata">
+                                <source src="assets/inventario.mp4" type="video/mp4">
+                                Seu navegador não suporta a reprodução de vídeo.
+                            </video>
+                        </div>
+
+                        <div class="mt-6 bg-white rounded-2xl p-5 lg:p-6 border border-gray-100">
+                            <p class="uppercase tracking-[3px] text-red-700 font-semibold text-xs mb-2">
+                                Orientação inicial
+                            </p>
+
+                            <p class="text-gray-700 text-sm lg:text-base leading-relaxed">
+                                Assista ao vídeo e, se precisar de apoio para iniciar ou regularizar um inventário,
+                                fale com nossa equipe pelo WhatsApp.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Cards informativos -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6 mt-16 lg:mt-20">
+
+                <div class="info-card bg-white rounded-[24px] p-7 lg:p-8 border border-gray-100 shadow-sm">
+                    <div class="w-14 h-14 rounded-full bg-[#9d1d24]/10 text-[#9d1d24] flex items-center justify-center text-2xl mb-5">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+
+                    <h3 class="font-bold text-xl text-[#08152d] mb-3">
+                        Segurança Jurídica
+                    </h3>
+
+                    <p class="text-gray-600 leading-relaxed">
+                        Condução técnica para evitar falhas que possam gerar prejuízos ou atrasos no processo.
+                    </p>
+                </div>
+
+                <div class="info-card bg-white rounded-[24px] p-7 lg:p-8 border border-gray-100 shadow-sm">
+                    <div class="w-14 h-14 rounded-full bg-[#9d1d24]/10 text-[#9d1d24] flex items-center justify-center text-2xl mb-5">
+                        <i class="fa-solid fa-people-roof"></i>
+                    </div>
+
+                    <h3 class="font-bold text-xl text-[#08152d] mb-3">
+                        Proteção aos Herdeiros
+                    </h3>
+
+                    <p class="text-gray-600 leading-relaxed">
+                        Apoio jurídico para preservar direitos, alinhar decisões e reduzir conflitos familiares.
+                    </p>
+                </div>
+
+                <div class="info-card bg-white rounded-[24px] p-7 lg:p-8 border border-gray-100 shadow-sm">
+                    <div class="w-14 h-14 rounded-full bg-[#9d1d24]/10 text-[#9d1d24] flex items-center justify-center text-2xl mb-5">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+
+                    <h3 class="font-bold text-xl text-[#08152d] mb-3">
+                        Mais Agilidade
+                    </h3>
+
+                    <p class="text-gray-600 leading-relaxed">
+                        Organização documental e estratégia adequada para tornar o procedimento mais eficiente.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="bg-white py-20">
+        <div class="max-w-5xl mx-auto px-4 lg:px-6 text-center">
+            <div class="bg-[#041327] rounded-[32px] p-8 lg:p-14 text-white shadow-xl">
+                <p class="uppercase tracking-[4px] text-red-300 font-semibold mb-4">
+                    Ramos Advogados Associados
+                </p>
+
+                <h2 class="logo-font text-3xl lg:text-5xl font-bold mb-6">
+                    Precisa iniciar ou regularizar um inventário?
+                </h2>
+
+                <p class="text-gray-200 text-base lg:text-lg leading-relaxed max-w-3xl mx-auto mb-9">
+                    Fale com nossa equipe e receba orientação jurídica para entender o melhor caminho para o seu caso.
+                </p>
+
+                <a 
+                    href="#" 
+                    onclick="openWhatsAppInventario()" 
+                    class="bg-red-700 hover:bg-red-800 text-white px-8 lg:px-12 py-4 lg:py-5 rounded-2xl font-semibold text-sm lg:text-lg transition inline-flex items-center gap-3"
+                >
+                    <i class="fab fa-whatsapp text-xl"></i>
+                    FALE COM UM ADVOGADO
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#041327] text-white py-10">
+        <div class="max-w-7xl mx-auto px-4 lg:px-6">
+
+            <div class="flex flex-col items-center justify-center text-center gap-5">
+
+                <img 
+                    src="assets/logo.png" 
+                    alt="Logo Ramos Advogados Associados" 
+                    class="h-20 object-contain"
+                >
+
+                <div class="flex flex-col items-center gap-2">
+                    <p class="text-gray-300">
+                        © 2026 Ramos Advogados Associados
+                    </p>
+
+                    <a 
+                        href="https://www.santanatechsp.com.br" 
+                        target="_blank" 
+                        class="text-amber-400 hover:text-white text-sm transition"
+                    >
+                        Desenvolvimento por Santana Tech SP
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('mobileNav').classList.toggle('hidden');
+        }
+
+        function closeMenu() {
+            document.getElementById('mobileNav').classList.add('hidden');
+        }
+
+        function toggleAreasMenu() {
+            document.getElementById('mobileAreasMenu').classList.toggle('hidden');
+        }
+
+        function openWhatsAppContato() {
+            const mensagem = 'Olá Ramos, vim pelo site, gostaria de falar com um advogado.';
+            const url = 'https://wa.me/5511972923459?text=' + encodeURIComponent(mensagem);
+            window.open(url, '_blank');
+        }
+
+        function openWhatsAppInventario() {
+            const mensagem = 'Olá Ramos, vim pelo site, gostaria de falar com um advogado sobre inventário.';
+            const url = 'https://wa.me/5511972923459?text=' + encodeURIComponent(mensagem);
+            window.open(url, '_blank');
+        }
+    </script>
+
+</body>
+</html>
