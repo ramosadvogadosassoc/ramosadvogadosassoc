@@ -37,7 +37,7 @@
             font-family: 'Playfair Display', serif;
         }
 
-        /* ================= HEADER / DROPDOWN ================= */
+        /* Dropdown Desktop */
         .dropdown {
             position: relative;
         }
@@ -83,122 +83,64 @@
             color: #9d1d24;
         }
 
-        /* ================= PÁGINA ================= */
+        /* Página */
         .page-bg {
             background:
-                radial-gradient(circle at top right, rgba(157, 29, 36, 0.08), transparent 32%),
-                linear-gradient(180deg, #ffffff 0%, #f7f7f7 55%, #f2f3f5 100%);
-            position: relative;
-            overflow: hidden;
+                radial-gradient(circle at top right, rgba(157, 29, 36, 0.06), transparent 32%),
+                linear-gradient(180deg, #ffffff 0%, #f7f7f7 100%);
         }
 
-        .page-bg::before {
-            content: "Inventário";
-            position: absolute;
-            top: 80px;
-            right: -45px;
-            font-family: 'Playfair Display', serif;
-            font-size: 150px;
-            font-weight: 800;
-            line-height: 1;
-            color: rgba(8, 21, 45, 0.035);
-            pointer-events: none;
-            white-space: nowrap;
-        }
-
-        .eyebrow {
+        .section-label {
             letter-spacing: 5px;
         }
 
         .title-line {
-            width: 94px;
+            width: 90px;
             height: 4px;
             background: #9d1d24;
             border-radius: 999px;
         }
 
-        .hero-card {
-            background: rgba(255,255,255,0.94);
+        .content-box {
+            background: #ffffff;
             border: 1px solid #e5e7eb;
-            box-shadow: 0 28px 70px rgba(15, 23, 42, 0.08);
-            backdrop-filter: blur(10px);
+            box-shadow: 0 22px 55px rgba(15, 23, 42, 0.07);
         }
 
         .highlight-text {
             color: #08152d;
             font-weight: 800;
-            background: linear-gradient(to top, rgba(157, 29, 36, 0.17) 42%, transparent 42%);
-            padding: 0 2px;
+            text-decoration: underline;
+            text-decoration-color: rgba(157, 29, 36, 0.35);
+            text-decoration-thickness: 4px;
+            text-underline-offset: 6px;
         }
 
-        .video-card {
-            position: relative;
-            background:
-                radial-gradient(circle at top left, rgba(157, 29, 36, 0.10), transparent 36%),
-                #f4f5f7;
-            border-left: 1px solid #e5e7eb;
+        .video-box {
+            background: #f3f4f6;
+            border: 1px solid #e5e7eb;
         }
 
         .video-frame {
             width: 100%;
-            max-width: 410px;
-            margin-left: auto;
-            margin-right: auto;
-            aspect-ratio: 9 / 16;
-            border-radius: 30px;
+            max-width: 430px;
+            margin: 0 auto;
+            border-radius: 28px;
             overflow: hidden;
             background: #000;
-            border: 8px solid #ffffff;
-            box-shadow: 0 30px 75px rgba(0,0,0,0.22);
+            box-shadow: 0 24px 60px rgba(0,0,0,0.16);
+            border: 7px solid #ffffff;
         }
 
         .video-frame video {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
             display: block;
-        }
-
-        .mini-card {
-            background: #ffffff;
-            border: 1px solid #e5e7eb;
-            box-shadow: 0 16px 38px rgba(15, 23, 42, 0.055);
-            transition: all 0.3s ease;
-        }
-
-        .mini-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 22px 48px rgba(15, 23, 42, 0.08);
-        }
-
-        .step-card {
-            background: #ffffff;
-            border: 1px solid #e5e7eb;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .step-card::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 24px;
-            bottom: 24px;
-            width: 5px;
-            border-radius: 0 999px 999px 0;
-            background: #9d1d24;
-        }
-
-        .step-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 22px 50px rgba(15, 23, 42, 0.08);
+            background: #000;
         }
 
         .cta-box {
-            background:
-                radial-gradient(circle at top left, rgba(157, 29, 36, 0.16), transparent 34%),
-                linear-gradient(135deg, #08152d 0%, #041327 100%);
+            background: #041327;
         }
 
         .whatsapp-float {
@@ -224,40 +166,29 @@
             background: #1ebe5d;
         }
 
-        @media (max-width: 1024px) {
-            .page-bg::before {
-                display: none;
-            }
-
-            .video-card {
-                border-left: 0;
-                border-top: 1px solid #e5e7eb;
-            }
-
-            .video-frame {
-                max-width: 360px;
-            }
-        }
-
         @media (max-width: 768px) {
-            .eyebrow {
+            .section-label {
                 letter-spacing: 4px;
             }
 
-            .hero-card {
+            .content-box {
+                border-radius: 28px;
+            }
+
+            .video-box {
                 border-radius: 28px;
             }
 
             .video-frame {
                 max-width: 100%;
                 border-width: 5px;
-                border-radius: 24px;
-                box-shadow: 0 20px 45px rgba(0,0,0,0.16);
+                border-radius: 22px;
+                box-shadow: 0 18px 42px rgba(0,0,0,0.14);
             }
 
-            .step-card::before {
-                top: 18px;
-                bottom: 18px;
+            .highlight-text {
+                text-decoration-thickness: 3px;
+                text-underline-offset: 5px;
             }
 
             .whatsapp-float {
@@ -321,6 +252,7 @@
             </button>
         </div>
 
+        <!-- MENU MOBILE -->
         <div id="mobileNav" class="hidden lg:hidden bg-white border-t shadow-lg">
             <div class="flex flex-col text-center uppercase font-semibold text-sm py-4">
                 <a href="index.html#inicio" onclick="closeMenu()" class="py-4 border-b">Início</a>
@@ -359,59 +291,57 @@
     </a>
 
     <!-- CONTEÚDO -->
-    <main class="page-bg py-14 lg:py-20">
+    <main class="page-bg py-16 lg:py-20">
 
-        <div class="relative z-10 max-w-7xl mx-auto px-4 lg:px-6">
+        <div class="max-w-7xl mx-auto px-4 lg:px-6">
 
-            <!-- HERO PRINCIPAL -->
-            <section class="hero-card rounded-[36px] overflow-hidden mb-10 lg:mb-14">
+            <!-- CABEÇALHO -->
+            <section class="text-center max-w-4xl mx-auto mb-12 lg:mb-16">
+                <p class="section-label uppercase text-red-700 font-semibold text-sm mb-5">
+                    Área de atuação
+                </p>
+
+                <h1 class="logo-font text-5xl md:text-6xl lg:text-7xl font-bold text-[#08152d] leading-tight mb-6">
+                    Inventário
+                </h1>
+
+                <div class="title-line mx-auto mb-8"></div>
+
+                <p class="text-gray-700 text-lg md:text-xl lg:text-2xl leading-relaxed">
+                    O processo de inventário é um passo decisivo para garantir a transmissão segura do patrimônio familiar.
+                </p>
+            </section>
+
+            <!-- BLOCO PRINCIPAL -->
+            <section class="content-box rounded-[34px] overflow-hidden mb-12 lg:mb-16">
+
                 <div class="grid grid-cols-1 lg:grid-cols-12">
 
                     <!-- TEXTO -->
-                    <div class="lg:col-span-7 p-7 md:p-10 lg:p-14 flex flex-col justify-center">
-
-                        <p class="eyebrow uppercase text-red-700 font-semibold text-sm mb-5">
-                            Área de atuação
-                        </p>
-
-                        <h1 class="logo-font text-5xl md:text-6xl lg:text-7xl font-bold text-[#08152d] leading-tight mb-7">
-                            Inventário
-                        </h1>
-
-                        <div class="title-line mb-8"></div>
-
-                        <div class="space-y-6 text-gray-700 text-base md:text-lg lg:text-xl leading-relaxed max-w-3xl">
-                            <p>
-                                O processo de inventário é um passo decisivo para garantir a transmissão segura do patrimônio familiar.
-                            </p>
-
-                            <p>
+                    <div class="lg:col-span-7 p-7 md:p-10 lg:p-14 flex items-center">
+                        <div class="max-w-3xl">
+                            <p class="text-gray-700 text-lg md:text-xl lg:text-[22px] leading-relaxed">
                                 Contratar um advogado experiente é o diferencial para 
                                 <span class="highlight-text">proteger os herdeiros de erros fiscais e atrasos burocráticos</span>
                                 que poderiam comprometer o patrimônio construído ao longo de uma vida,
                                 <span class="highlight-text">oferecendo a segurança jurídica necessária para que a herança seja recebida de forma ágil, tranquila e eficiente.</span>
                             </p>
+
+                            <div class="mt-9">
+                                <a 
+                                    href="#" 
+                                    onclick="openWhatsAppInventario()" 
+                                    class="bg-red-700 hover:bg-red-800 text-white px-8 lg:px-10 py-4 rounded-xl font-semibold transition inline-flex items-center justify-center gap-3 text-sm lg:text-base shadow-lg shadow-red-900/10"
+                                >
+                                    <i class="fab fa-whatsapp text-xl"></i>
+                                    FALE COM UM ADVOGADO
+                                </a>
+                            </div>
                         </div>
-
-                        <div class="mt-10 flex flex-col sm:flex-row gap-4 sm:items-center">
-                            <a 
-                                href="#" 
-                                onclick="openWhatsAppInventario()" 
-                                class="bg-red-700 hover:bg-red-800 text-white px-8 lg:px-10 py-4 rounded-xl font-semibold transition inline-flex items-center justify-center gap-3 text-sm lg:text-base shadow-lg shadow-red-900/10"
-                            >
-                                <i class="fab fa-whatsapp text-xl"></i>
-                                FALE COM UM ADVOGADO
-                            </a>
-
-                            <p class="text-gray-500 text-sm leading-relaxed max-w-xs">
-                                Atendimento jurídico para conduzir o processo com segurança e responsabilidade.
-                            </p>
-                        </div>
-
                     </div>
 
                     <!-- VÍDEO -->
-                    <div class="lg:col-span-5 video-card p-7 md:p-10 lg:p-12 flex items-center justify-center">
+                    <div class="lg:col-span-5 video-box p-7 md:p-10 lg:p-12 flex items-center justify-center">
                         <div class="video-frame">
                             <video controls playsinline preload="metadata">
                                 <source src="assets/inventario.mp4" type="video/mp4">
@@ -421,132 +351,12 @@
                     </div>
 
                 </div>
-            </section>
-
-            <!-- FAIXA DE APOIO -->
-            <section class="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6 mb-10 lg:mb-14">
-
-                <div class="mini-card rounded-[26px] p-7">
-                    <div class="w-13 h-13 mb-5 text-red-700 text-3xl">
-                        <i class="fa-solid fa-scale-balanced"></i>
-                    </div>
-
-                    <h3 class="font-bold text-xl text-[#08152d] mb-3">
-                        Segurança Jurídica
-                    </h3>
-
-                    <p class="text-gray-600 leading-relaxed">
-                        Análise técnica para reduzir riscos, evitar falhas documentais e proteger os direitos dos herdeiros.
-                    </p>
-                </div>
-
-                <div class="mini-card rounded-[26px] p-7">
-                    <div class="w-13 h-13 mb-5 text-red-700 text-3xl">
-                        <i class="fa-solid fa-file-signature"></i>
-                    </div>
-
-                    <h3 class="font-bold text-xl text-[#08152d] mb-3">
-                        Organização do Processo
-                    </h3>
-
-                    <p class="text-gray-600 leading-relaxed">
-                        Condução das etapas necessárias para que o inventário avance com clareza e previsibilidade.
-                    </p>
-                </div>
-
-                <div class="mini-card rounded-[26px] p-7">
-                    <div class="w-13 h-13 mb-5 text-red-700 text-3xl">
-                        <i class="fa-solid fa-people-roof"></i>
-                    </div>
-
-                    <h3 class="font-bold text-xl text-[#08152d] mb-3">
-                        Proteção Familiar
-                    </h3>
-
-                    <p class="text-gray-600 leading-relaxed">
-                        Apoio jurídico para preservar o patrimônio e tornar a transmissão da herança mais tranquila.
-                    </p>
-                </div>
-
-            </section>
-
-            <!-- SEÇÃO INFORMATIVA -->
-            <section class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
-
-                <div class="lg:col-span-5 bg-white rounded-[30px] border border-gray-200 p-7 lg:p-10 shadow-sm">
-                    <p class="eyebrow uppercase text-red-700 font-semibold text-xs mb-4">
-                        Modalidades
-                    </p>
-
-                    <h2 class="logo-font text-3xl lg:text-4xl font-bold text-[#08152d] leading-tight mb-5">
-                        Inventário Judicial e Extrajudicial
-                    </h2>
-
-                    <p class="text-gray-600 leading-relaxed text-base lg:text-lg">
-                        Cada caso exige uma análise específica. A escolha correta do caminho evita atrasos, custos desnecessários e insegurança para os envolvidos.
-                    </p>
-
-                    <div class="mt-8">
-                        <a 
-                            href="#" 
-                            onclick="openWhatsAppInventario()" 
-                            class="border-2 border-red-700 text-red-700 hover:bg-red-700 hover:text-white px-7 py-4 rounded-xl font-semibold transition inline-flex items-center gap-3"
-                        >
-                            <i class="fab fa-whatsapp"></i>
-                            TIRAR DÚVIDAS
-                        </a>
-                    </div>
-                </div>
-
-                <div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6">
-
-                    <div class="step-card rounded-[26px] p-7 lg:p-8">
-                        <h3 class="font-bold text-xl text-[#08152d] mb-3 pl-3">
-                            Quando existe acordo
-                        </h3>
-
-                        <p class="text-gray-600 leading-relaxed pl-3">
-                            Quando os herdeiros estão alinhados e a documentação está adequada, o procedimento pode ser mais objetivo e eficiente.
-                        </p>
-                    </div>
-
-                    <div class="step-card rounded-[26px] p-7 lg:p-8">
-                        <h3 class="font-bold text-xl text-[#08152d] mb-3 pl-3">
-                            Quando há conflito
-                        </h3>
-
-                        <p class="text-gray-600 leading-relaxed pl-3">
-                            Em situações com divergências, é fundamental ter orientação jurídica para proteger direitos e evitar prejuízos.
-                        </p>
-                    </div>
-
-                    <div class="step-card rounded-[26px] p-7 lg:p-8">
-                        <h3 class="font-bold text-xl text-[#08152d] mb-3 pl-3">
-                            Regularização patrimonial
-                        </h3>
-
-                        <p class="text-gray-600 leading-relaxed pl-3">
-                            O inventário permite formalizar a transmissão dos bens, viabilizando a regularização de imóveis, valores e direitos.
-                        </p>
-                    </div>
-
-                    <div class="step-card rounded-[26px] p-7 lg:p-8">
-                        <h3 class="font-bold text-xl text-[#08152d] mb-3 pl-3">
-                            Atenção a prazos e custos
-                        </h3>
-
-                        <p class="text-gray-600 leading-relaxed pl-3">
-                            A atuação preventiva ajuda a evitar atrasos burocráticos, erros fiscais e custos maiores durante o procedimento.
-                        </p>
-                    </div>
-
-                </div>
 
             </section>
 
             <!-- CTA FINAL -->
-            <section class="cta-box rounded-[34px] mt-10 lg:mt-14 p-8 lg:p-12 text-white text-center">
-                <p class="eyebrow uppercase text-red-300 font-semibold text-xs mb-4">
+            <section class="cta-box rounded-[34px] p-8 lg:p-12 text-white text-center">
+                <p class="section-label uppercase text-red-300 font-semibold text-xs mb-4">
                     Ramos Advogados Associados
                 </p>
 
