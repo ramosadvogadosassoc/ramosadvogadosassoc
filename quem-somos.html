@@ -114,6 +114,52 @@
             margin-top: 2px;
         }
 
+        /* Dropdown Desktop */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 220px;
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 16px;
+            box-shadow: 0 18px 35px rgba(0,0,0,0.12);
+            padding: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.25s ease;
+            z-index: 100;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 14px;
+            border-radius: 12px;
+            color: #08152d;
+            font-size: 13px;
+            font-weight: 700;
+            transition: all 0.25s ease;
+            white-space: nowrap;
+        }
+
+        .dropdown-menu a:hover {
+            background: rgba(157, 29, 36, 0.08);
+            color: #9d1d24;
+        }
+
         .whatsapp-float {
             position: fixed;
             bottom: 25px;
@@ -168,7 +214,21 @@
             <div class="hidden lg:flex items-center gap-10">
                 <nav class="flex items-center gap-10 font-semibold text-sm uppercase">
                     <a href="index.html#inicio" class="hover:text-red-700 transition">Início</a>
-                    <a href="index.html#areas" class="hover:text-red-700 transition">Áreas</a>
+
+                    <div class="dropdown">
+                        <button class="hover:text-red-700 transition uppercase font-semibold flex items-center gap-2">
+                            Áreas
+                            <i class="fa-solid fa-chevron-down text-xs"></i>
+                        </button>
+
+                        <div class="dropdown-menu">
+                            <a href="inventario.html">
+                                <i class="fa-solid fa-file-signature text-red-700"></i>
+                                Inventário
+                            </a>
+                        </div>
+                    </div>
+
                     <a href="quem-somos.html" class="text-red-700 transition">Quem Somos</a>
                     <a href="index.html#contato" class="hover:text-red-700 transition">Contato</a>
                 </nav>
@@ -188,13 +248,25 @@
             </button>
         </div>
 
-        <!-- Menu Mobile -->
+        <!-- MENU MOBILE -->
         <div id="mobileNav" class="hidden lg:hidden bg-white border-t shadow-lg">
             <div class="flex flex-col text-center uppercase font-semibold text-sm py-4">
-                <a href="index.html#inicio" class="py-4 border-b">Início</a>
-                <a href="index.html#areas" class="py-4 border-b">Áreas</a>
-                <a href="quem-somos.html" class="py-4 border-b text-red-700">Quem Somos</a>
-                <a href="index.html#contato" class="py-4 border-b">Contato</a>
+                <a href="index.html#inicio" onclick="closeMenu()" class="py-4 border-b">Início</a>
+
+                <button onclick="toggleAreasMenu()" class="py-4 border-b uppercase font-semibold flex items-center justify-center gap-2">
+                    Áreas
+                    <i class="fa-solid fa-chevron-down text-xs"></i>
+                </button>
+
+                <div id="mobileAreasMenu" class="hidden bg-gray-50 border-b">
+                    <a href="inventario.html" class="py-4 flex items-center justify-center gap-2 text-red-700">
+                        <i class="fa-solid fa-file-signature"></i>
+                        Inventário
+                    </a>
+                </div>
+
+                <a href="quem-somos.html" onclick="closeMenu()" class="py-4 border-b text-red-700">Quem Somos</a>
+                <a href="index.html#contato" onclick="closeMenu()" class="py-4 border-b">Contato</a>
 
                 <div class="px-6 py-6">
                     <a 
@@ -534,6 +606,14 @@
     <script>
         function toggleMenu() {
             document.getElementById('mobileNav').classList.toggle('hidden');
+        }
+
+        function closeMenu() {
+            document.getElementById('mobileNav').classList.add('hidden');
+        }
+
+        function toggleAreasMenu() {
+            document.getElementById('mobileAreasMenu').classList.toggle('hidden');
         }
 
         function openWhatsAppContato() {
