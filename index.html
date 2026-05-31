@@ -23,6 +23,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
         }
@@ -41,27 +45,26 @@
         }
 
         /* ==================== DESKTOP ==================== */
-        /* ==================== DESKTOP ==================== */
-.lawyer-heitor,
-.lawyer-rafael {
-    position: absolute;
-    bottom: 0;
-    z-index: 10;
-    width: auto;
-    object-fit: contain;
-}
+        .lawyer-heitor,
+        .lawyer-rafael {
+            position: absolute;
+            bottom: 0;
+            z-index: 10;
+            width: auto;
+            object-fit: contain;
+        }
 
-/* Heitor */
-.lawyer-heitor {
-    left: 0;
-    height: 88vh;
-}
+        /* Heitor */
+        .lawyer-heitor {
+            left: 0;
+            height: 88vh;
+        }
 
-/* Rafael ajustado para ficar visualmente no mesmo tamanho */
-.lawyer-rafael {
-    right: 0;
-    height: 96vh;
-}
+        /* Rafael ajustado para ficar visualmente no mesmo tamanho */
+        .lawyer-rafael {
+            right: 0;
+            height: 96vh;
+        }
 
         /* ==================== MOBILE ==================== */
         .mobile-lawyers {
@@ -78,21 +81,21 @@
         }
 
         .mobile-heitor,
-.mobile-rafael {
-    height: auto;
-    object-fit: contain;
-    max-width: none;
-}
+        .mobile-rafael {
+            height: auto;
+            object-fit: contain;
+            max-width: none;
+        }
 
-/* Mobile: Heitor */
-.mobile-heitor {
-    width: 72%;
-}
+        /* Mobile: Heitor */
+        .mobile-heitor {
+            width: 72%;
+        }
 
-/* Mobile: Rafael maior para equilibrar com Heitor */
-.mobile-rafael {
-    width: 84%;
-}
+        /* Mobile: Rafael maior para equilibrar com Heitor */
+        .mobile-rafael {
+            width: 84%;
+        }
 
         @media (max-width: 768px) {
             .hero {
@@ -129,6 +132,52 @@
         .contact-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 18px 35px rgba(0,0,0,0.08);
+        }
+
+        /* Dropdown Desktop */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 220px;
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 16px;
+            box-shadow: 0 18px 35px rgba(0,0,0,0.12);
+            padding: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.25s ease;
+            z-index: 100;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 14px;
+            border-radius: 12px;
+            color: #08152d;
+            font-size: 13px;
+            font-weight: 700;
+            transition: all 0.25s ease;
+            white-space: nowrap;
+        }
+
+        .dropdown-menu a:hover {
+            background: rgba(157, 29, 36, 0.08);
+            color: #9d1d24;
         }
 
         /* WhatsApp Flutuante */
@@ -186,7 +235,21 @@
             <div class="hidden lg:flex items-center gap-10">
                 <nav class="flex items-center gap-10 font-semibold text-sm uppercase">
                     <a href="#inicio" class="hover:text-red-700 transition">Início</a>
-                    <a href="#areas" class="hover:text-red-700 transition">Áreas</a>
+
+                    <div class="dropdown">
+                        <button class="hover:text-red-700 transition uppercase font-semibold flex items-center gap-2">
+                            Áreas
+                            <i class="fa-solid fa-chevron-down text-xs"></i>
+                        </button>
+
+                        <div class="dropdown-menu">
+                            <a href="inventario.html">
+                                <i class="fa-solid fa-file-signature text-red-700"></i>
+                                Inventário
+                            </a>
+                        </div>
+                    </div>
+
                     <a href="quem-somos.html" class="hover:text-red-700 transition">Quem Somos</a>
                     <a href="#contato" class="hover:text-red-700 transition">Contato</a>
                 </nav>
@@ -210,8 +273,20 @@
         <div id="mobileNav" class="hidden lg:hidden bg-white border-t shadow-lg">
             <div class="flex flex-col text-center uppercase font-semibold text-sm py-4">
                 <a href="#inicio" onclick="closeMenu()" class="py-4 border-b">Início</a>
-                <a href="#areas" onclick="closeMenu()" class="py-4 border-b">Áreas</a>
-                <a href="quem-somos.html" class="py-4 border-b">Quem Somos</a>
+
+                <button onclick="toggleAreasMenu()" class="py-4 border-b uppercase font-semibold flex items-center justify-center gap-2">
+                    Áreas
+                    <i class="fa-solid fa-chevron-down text-xs"></i>
+                </button>
+
+                <div id="mobileAreasMenu" class="hidden bg-gray-50 border-b">
+                    <a href="inventario.html" class="py-4 flex items-center justify-center gap-2 text-red-700">
+                        <i class="fa-solid fa-file-signature"></i>
+                        Inventário
+                    </a>
+                </div>
+
+                <a href="quem-somos.html" onclick="closeMenu()" class="py-4 border-b">Quem Somos</a>
                 <a href="#contato" onclick="closeMenu()" class="py-4 border-b">Contato</a>
 
                 <div class="px-6 py-6">
@@ -303,6 +378,7 @@
 
             <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
 
+                <!-- DIREITO BANCÁRIO -->
                 <div class="area-card bg-white rounded-[24px] p-5 lg:p-8 text-center shadow-sm border border-gray-100 overflow-hidden">
                     <div class="text-4xl lg:text-5xl text-red-700 mb-4 lg:mb-6">
                         <i class="fa-solid fa-users"></i>
@@ -317,7 +393,8 @@
                     </p>
                 </div>
 
-                <div class="area-card bg-white rounded-[24px] p-5 lg:p-8 text-center shadow-sm border border-gray-100 overflow-hidden">
+                <!-- INVENTÁRIOS -->
+                <div class="area-card bg-white rounded-[24px] p-5 lg:p-8 text-center shadow-sm border border-gray-100 overflow-hidden flex flex-col">
                     <div class="text-4xl lg:text-5xl text-red-700 mb-4 lg:mb-6">
                         <i class="fa-solid fa-file-signature"></i>
                     </div>
@@ -326,11 +403,22 @@
                         Inventários e Sucessões
                     </h3>
 
-                    <p class="text-gray-600 text-xs lg:text-base leading-relaxed">
+                    <p class="text-gray-600 text-xs lg:text-base leading-relaxed flex-1">
                         Inventário Judicial e Extrajudicial, Doações e Testamentos.
                     </p>
+
+                    <div class="mt-5">
+                        <a 
+                            href="inventario.html"
+                            class="inline-flex items-center justify-center gap-2 bg-red-700 hover:bg-red-800 text-white px-5 py-3 rounded-xl font-semibold text-xs lg:text-sm transition"
+                        >
+                            Veja Mais
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
                 </div>
 
+                <!-- DIREITO IMOBILIÁRIO -->
                 <div class="area-card bg-white rounded-[24px] p-5 lg:p-8 text-center shadow-sm border border-gray-100 overflow-hidden">
                     <div class="text-4xl lg:text-5xl text-red-700 mb-4 lg:mb-6">
                         <i class="fa-solid fa-house"></i>
@@ -345,6 +433,7 @@
                     </p>
                 </div>
 
+                <!-- DIREITO SECURITÁRIO -->
                 <div class="area-card bg-white rounded-[24px] p-5 lg:p-8 text-center shadow-sm border border-gray-100 overflow-hidden">
                     <div class="text-4xl lg:text-5xl text-red-700 mb-4 lg:mb-6">
                         <i class="fa-solid fa-building-columns"></i>
@@ -359,6 +448,7 @@
                     </p>
                 </div>
 
+                <!-- DIREITO CIVIL -->
                 <div class="area-card bg-white rounded-[24px] p-5 lg:p-8 text-center shadow-sm border border-gray-100 overflow-hidden">
                     <div class="text-4xl lg:text-5xl text-red-700 mb-4 lg:mb-6">
                         <i class="fa-solid fa-briefcase"></i>
@@ -373,6 +463,7 @@
                     </p>
                 </div>
 
+                <!-- FINANCIAMENTOS -->
                 <div class="area-card bg-white rounded-[24px] p-5 lg:p-8 text-center shadow-sm border border-gray-100 overflow-hidden">
                     <div class="text-4xl lg:text-5xl text-red-700 mb-4 lg:mb-6">
                         <i class="fa-solid fa-ellipsis"></i>
@@ -617,6 +708,10 @@
 
         function closeMenu() {
             document.getElementById('mobileNav').classList.add('hidden');
+        }
+
+        function toggleAreasMenu() {
+            document.getElementById('mobileAreasMenu').classList.toggle('hidden');
         }
 
         function openWhatsAppContato() {
