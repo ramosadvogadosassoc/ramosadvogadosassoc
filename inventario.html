@@ -37,7 +37,7 @@
             font-family: 'Playfair Display', serif;
         }
 
-        /* Dropdown Desktop */
+        /* ================= HEADER / DROPDOWN ================= */
         .dropdown {
             position: relative;
         }
@@ -83,10 +83,11 @@
             color: #9d1d24;
         }
 
-        /* Página */
+        /* ================= PÁGINA ================= */
         .page-bg {
             background:
-                radial-gradient(circle at top right, rgba(157, 29, 36, 0.06), transparent 32%),
+                radial-gradient(circle at top right, rgba(157, 29, 36, 0.055), transparent 34%),
+                radial-gradient(circle at bottom left, rgba(8, 21, 45, 0.045), transparent 32%),
                 linear-gradient(180deg, #ffffff 0%, #f7f7f7 100%);
         }
 
@@ -101,35 +102,56 @@
             border-radius: 999px;
         }
 
-        .content-box {
+        .text-card {
+            position: relative;
             background: #ffffff;
             border: 1px solid #e5e7eb;
-            box-shadow: 0 22px 55px rgba(15, 23, 42, 0.07);
+            box-shadow: 0 24px 65px rgba(15, 23, 42, 0.075);
+            overflow: hidden;
+        }
+
+        .text-card::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 34px;
+            bottom: 34px;
+            width: 6px;
+            background: linear-gradient(to bottom, #9d1d24, #6f1118);
+            border-radius: 0 999px 999px 0;
         }
 
         .highlight-text {
             color: #08152d;
             font-weight: 800;
             text-decoration: underline;
-            text-decoration-color: rgba(157, 29, 36, 0.35);
+            text-decoration-color: rgba(157, 29, 36, 0.36);
             text-decoration-thickness: 4px;
             text-underline-offset: 6px;
         }
 
-        .video-box {
-            background: #f3f4f6;
+        .video-section {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 20px 55px rgba(15, 23, 42, 0.065);
+        }
+
+        .video-frame-wrap {
+            background:
+                radial-gradient(circle at center, rgba(157, 29, 36, 0.10), transparent 58%),
+                #f3f4f6;
             border: 1px solid #e5e7eb;
         }
 
         .video-frame {
             width: 100%;
-            max-width: 430px;
+            max-width: 520px;
             margin: 0 auto;
             border-radius: 28px;
             overflow: hidden;
             background: #000;
-            box-shadow: 0 24px 60px rgba(0,0,0,0.16);
             border: 7px solid #ffffff;
+            box-shadow: 0 26px 65px rgba(0,0,0,0.18);
         }
 
         .video-frame video {
@@ -140,7 +162,9 @@
         }
 
         .cta-box {
-            background: #041327;
+            background:
+                radial-gradient(circle at top left, rgba(157, 29, 36, 0.18), transparent 34%),
+                linear-gradient(135deg, #08152d 0%, #041327 100%);
         }
 
         .whatsapp-float {
@@ -171,12 +195,22 @@
                 letter-spacing: 4px;
             }
 
-            .content-box {
+            .text-card {
                 border-radius: 28px;
             }
 
-            .video-box {
+            .text-card::before {
+                top: 24px;
+                bottom: 24px;
+                width: 5px;
+            }
+
+            .video-section {
                 border-radius: 28px;
+            }
+
+            .video-frame-wrap {
+                border-radius: 24px;
             }
 
             .video-frame {
@@ -296,7 +330,7 @@
         <div class="max-w-7xl mx-auto px-4 lg:px-6">
 
             <!-- CABEÇALHO -->
-            <section class="text-center max-w-4xl mx-auto mb-12 lg:mb-16">
+            <section class="max-w-5xl mx-auto text-center mb-10 lg:mb-14">
                 <p class="section-label uppercase text-red-700 font-semibold text-sm mb-5">
                     Área de atuação
                 </p>
@@ -307,51 +341,58 @@
 
                 <div class="title-line mx-auto mb-8"></div>
 
-                <p class="text-gray-700 text-lg md:text-xl lg:text-2xl leading-relaxed">
+                <p class="text-gray-700 text-lg md:text-xl lg:text-2xl leading-relaxed max-w-4xl mx-auto">
                     O processo de inventário é um passo decisivo para garantir a transmissão segura do patrimônio familiar.
                 </p>
             </section>
 
-            <!-- BLOCO PRINCIPAL -->
-            <section class="content-box rounded-[34px] overflow-hidden mb-12 lg:mb-16">
+            <!-- TEXTO PRINCIPAL -->
+            <section class="text-card rounded-[34px] p-7 md:p-10 lg:p-14 mb-10 lg:mb-14">
+                <div class="max-w-5xl mx-auto">
+                    <p class="text-gray-700 text-lg md:text-xl lg:text-[23px] leading-relaxed text-left lg:text-center">
+                        Contratar um advogado experiente é o diferencial para 
+                        <span class="highlight-text">proteger os herdeiros de erros fiscais e atrasos burocráticos</span>
+                        que poderiam comprometer o patrimônio construído ao longo de uma vida,
+                        <span class="highlight-text">oferecendo a segurança jurídica necessária para que a herança seja recebida de forma ágil, tranquila e eficiente.</span>
+                    </p>
 
-                <div class="grid grid-cols-1 lg:grid-cols-12">
-
-                    <!-- TEXTO -->
-                    <div class="lg:col-span-7 p-7 md:p-10 lg:p-14 flex items-center">
-                        <div class="max-w-3xl">
-                            <p class="text-gray-700 text-lg md:text-xl lg:text-[22px] leading-relaxed">
-                                Contratar um advogado experiente é o diferencial para 
-                                <span class="highlight-text">proteger os herdeiros de erros fiscais e atrasos burocráticos</span>
-                                que poderiam comprometer o patrimônio construído ao longo de uma vida,
-                                <span class="highlight-text">oferecendo a segurança jurídica necessária para que a herança seja recebida de forma ágil, tranquila e eficiente.</span>
-                            </p>
-
-                            <div class="mt-9">
-                                <a 
-                                    href="#" 
-                                    onclick="openWhatsAppInventario()" 
-                                    class="bg-red-700 hover:bg-red-800 text-white px-8 lg:px-10 py-4 rounded-xl font-semibold transition inline-flex items-center justify-center gap-3 text-sm lg:text-base shadow-lg shadow-red-900/10"
-                                >
-                                    <i class="fab fa-whatsapp text-xl"></i>
-                                    FALE COM UM ADVOGADO
-                                </a>
-                            </div>
-                        </div>
+                    <div class="mt-9 flex justify-center">
+                        <a 
+                            href="#" 
+                            onclick="openWhatsAppInventario()" 
+                            class="bg-red-700 hover:bg-red-800 text-white px-8 lg:px-10 py-4 rounded-xl font-semibold transition inline-flex items-center justify-center gap-3 text-sm lg:text-base shadow-lg shadow-red-900/10"
+                        >
+                            <i class="fab fa-whatsapp text-xl"></i>
+                            FALE COM UM ADVOGADO
+                        </a>
                     </div>
+                </div>
+            </section>
 
-                    <!-- VÍDEO -->
-                    <div class="lg:col-span-5 video-box p-7 md:p-10 lg:p-12 flex items-center justify-center">
-                        <div class="video-frame">
-                            <video controls playsinline preload="metadata">
-                                <source src="assets/inventario.mp4" type="video/mp4">
-                                Seu navegador não suporta a reprodução de vídeo.
-                            </video>
-                        </div>
-                    </div>
+            <!-- VÍDEO ABAIXO DO TEXTO -->
+            <section class="video-section rounded-[34px] p-7 md:p-10 lg:p-12 mb-10 lg:mb-14">
+                <div class="text-center max-w-3xl mx-auto mb-8">
+                    <p class="section-label uppercase text-red-700 font-semibold text-xs mb-4">
+                        Vídeo explicativo
+                    </p>
 
+                    <h2 class="logo-font text-3xl lg:text-5xl font-bold text-[#08152d] leading-tight mb-4">
+                        Entenda melhor sobre o processo de inventário
+                    </h2>
+
+                    <p class="text-gray-600 text-base lg:text-lg leading-relaxed">
+                        Assista ao vídeo e veja como a orientação jurídica pode tornar esse processo mais seguro, organizado e eficiente.
+                    </p>
                 </div>
 
+                <div class="video-frame-wrap rounded-[30px] p-5 lg:p-8">
+                    <div class="video-frame">
+                        <video controls playsinline preload="metadata">
+                            <source src="assets/inventario.mp4" type="video/mp4">
+                            Seu navegador não suporta a reprodução de vídeo.
+                        </video>
+                    </div>
+                </div>
             </section>
 
             <!-- CTA FINAL -->
