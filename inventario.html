@@ -44,7 +44,7 @@
         }
 
         .content-card {
-            background: rgba(255, 255, 255, 0.96);
+            background: rgba(255, 255, 255, 0.97);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.25);
         }
@@ -53,24 +53,9 @@
             color: #08152d;
             font-weight: 800;
             text-decoration: underline;
-            text-decoration-color: rgba(157, 29, 36, 0.35);
+            text-decoration-color: rgba(157, 29, 36, 0.45);
             text-decoration-thickness: 4px;
             text-underline-offset: 5px;
-        }
-
-        .info-card {
-            transition: all 0.35s ease;
-        }
-
-        .info-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 22px 45px rgba(0,0,0,0.08);
-        }
-
-        .video-box {
-            background:
-                radial-gradient(circle at center, rgba(157, 29, 36, 0.14), transparent 55%),
-                linear-gradient(180deg, #f9fafb 0%, #f3f4f6 100%);
         }
 
         .video-frame {
@@ -87,6 +72,7 @@
             display: block;
         }
 
+        /* Dropdown Desktop */
         .dropdown {
             position: relative;
         }
@@ -193,7 +179,7 @@
                     <a href="index.html#inicio" class="hover:text-red-700 transition">Início</a>
 
                     <div class="dropdown">
-                        <button class="hover:text-red-700 transition uppercase font-semibold flex items-center gap-2">
+                        <button class="text-red-700 transition uppercase font-semibold flex items-center gap-2">
                             Áreas
                             <i class="fa-solid fa-chevron-down text-xs"></i>
                         </button>
@@ -230,7 +216,7 @@
             <div class="flex flex-col text-center uppercase font-semibold text-sm py-4">
                 <a href="index.html#inicio" onclick="closeMenu()" class="py-4 border-b">Início</a>
 
-                <button onclick="toggleAreasMenu()" class="py-4 border-b uppercase font-semibold flex items-center justify-center gap-2">
+                <button onclick="toggleAreasMenu()" class="py-4 border-b uppercase font-semibold flex items-center justify-center gap-2 text-red-700">
                     Áreas
                     <i class="fa-solid fa-chevron-down text-xs"></i>
                 </button>
@@ -259,222 +245,78 @@
     </header>
 
     <!-- WhatsApp Flutuante -->
-    <a href="#" onclick="openWhatsAppContato()" class="whatsapp-float" aria-label="Fale conosco pelo WhatsApp">
+    <a href="#" onclick="openWhatsAppInventario()" class="whatsapp-float" aria-label="Fale conosco pelo WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- HERO -->
-    <section class="premium-bg text-white py-20 lg:py-28 relative overflow-hidden">
+    <!-- CONTEÚDO INVENTÁRIO -->
+    <main class="premium-bg min-h-screen py-16 lg:py-24 relative overflow-hidden">
         <div class="absolute inset-0 opacity-10">
             <div class="absolute top-10 left-10 w-72 h-72 border border-white/30 rounded-full"></div>
             <div class="absolute bottom-10 right-10 w-96 h-96 border border-white/20 rounded-full"></div>
         </div>
 
-        <div class="relative z-10 max-w-7xl mx-auto px-4 lg:px-6">
+        <div class="relative z-10 max-w-6xl mx-auto px-4 lg:px-6">
 
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            <div class="content-card rounded-[32px] p-7 lg:p-12 shadow-2xl">
 
-                <div class="lg:col-span-5">
-                    <p class="uppercase tracking-[5px] text-red-300 font-semibold mb-5 text-sm">
+                <div class="text-center max-w-4xl mx-auto mb-10">
+                    <p class="uppercase tracking-[5px] text-red-700 font-semibold mb-4 text-sm">
                         Área de atuação
                     </p>
 
-                    <h1 class="logo-font text-4xl lg:text-6xl font-bold leading-tight mb-6">
+                    <h1 class="logo-font text-4xl lg:text-6xl font-bold text-[#08152d] leading-tight">
                         Inventário
                     </h1>
 
-                    <div class="w-24 h-1 bg-red-700 rounded-full mb-7"></div>
-
-                    <p class="text-gray-200 text-base lg:text-lg leading-relaxed">
-                        Segurança jurídica para a transmissão do patrimônio familiar, com orientação técnica em cada etapa do processo.
-                    </p>
-
-                    <div class="mt-8">
-                        <a 
-                            href="#" 
-                            onclick="openWhatsAppInventario()" 
-                            class="bg-red-700 hover:bg-red-800 text-white px-8 lg:px-10 py-4 rounded-xl font-semibold transition inline-flex items-center gap-3"
-                        >
-                            <i class="fab fa-whatsapp text-xl"></i>
-                            FALE COM UM ADVOGADO
-                        </a>
-                    </div>
+                    <div class="w-24 h-1 bg-red-700 rounded-full mx-auto mt-6"></div>
                 </div>
 
-                <div class="lg:col-span-7">
-                    <div class="content-card rounded-[32px] p-7 lg:p-10 shadow-2xl">
-                        <i class="fa-solid fa-file-signature text-red-700 text-4xl mb-6"></i>
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
 
-                        <h2 class="logo-font text-3xl lg:text-4xl font-bold text-[#08152d] mb-6">
-                            Proteção, agilidade e tranquilidade para os herdeiros.
-                        </h2>
+                    <!-- Texto -->
+                    <div class="lg:col-span-6">
+                        <div class="space-y-6 text-gray-700 text-base lg:text-xl leading-relaxed">
+                            <p>
+                                O processo de inventário é um passo decisivo para garantir a transmissão segura do patrimônio familiar.
+                            </p>
 
-                        <p class="text-gray-700 text-base lg:text-xl leading-relaxed">
-                            O processo de inventário é um passo decisivo para garantir a transmissão segura do patrimônio familiar.
-                        </p>
-                    </div>
-                </div>
+                            <p>
+                                Contratar um advogado experiente é o diferencial para 
+                                <span class="highlight-text">proteger os herdeiros de erros fiscais e atrasos burocráticos</span>
+                                que poderiam comprometer o patrimônio construído ao longo de uma vida,
+                                <span class="highlight-text">oferecendo a segurança jurídica necessária para que a herança seja recebida de forma ágil, tranquila e eficiente.</span>
+                            </p>
+                        </div>
 
-            </div>
-
-        </div>
-    </section>
-
-    <!-- CONTEÚDO PRINCIPAL -->
-    <section class="py-20 lg:py-28 bg-[#f7f7f7]">
-        <div class="max-w-7xl mx-auto px-4 lg:px-6">
-
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-
-                <!-- Texto -->
-                <div class="lg:col-span-6">
-                    <p class="uppercase tracking-[4px] text-red-700 font-semibold mb-4">
-                        Inventário Judicial e Extrajudicial
-                    </p>
-
-                    <h2 class="logo-font text-3xl lg:text-5xl font-bold text-[#08152d] leading-tight mb-7">
-                        Um processo que exige cuidado técnico e responsabilidade.
-                    </h2>
-
-                    <div class="space-y-6 text-gray-700 text-base lg:text-lg leading-relaxed">
-                        <p>
-                            O processo de inventário é um passo decisivo para garantir a transmissão segura do patrimônio familiar.
-                        </p>
-
-                        <p>
-                            Contratar um advogado experiente é o diferencial para 
-                            <span class="highlight-text">proteger os herdeiros de erros fiscais e atrasos burocráticos</span>
-                            que poderiam comprometer o patrimônio construído ao longo de uma vida.
-                        </p>
-
-                        <p>
-                            Com orientação adequada, é possível conduzir o inventário com mais organização, clareza e segurança,
-                            <span class="highlight-text">oferecendo a segurança jurídica necessária para que a herança seja recebida de forma ágil, tranquila e eficiente.</span>
-                        </p>
+                        <div class="mt-9">
+                            <a 
+                                href="#" 
+                                onclick="openWhatsAppInventario()" 
+                                class="bg-red-700 hover:bg-red-800 text-white px-8 lg:px-10 py-4 rounded-xl font-semibold transition inline-flex items-center justify-center gap-3 text-sm lg:text-base"
+                            >
+                                <i class="fab fa-whatsapp text-xl"></i>
+                                FALE COM UM ADVOGADO
+                            </a>
+                        </div>
                     </div>
 
-                    <div class="mt-10 flex flex-col sm:flex-row gap-4">
-                        <a 
-                            href="#" 
-                            onclick="openWhatsAppInventario()" 
-                            class="bg-red-700 hover:bg-red-800 text-white px-8 lg:px-10 py-4 rounded-xl font-semibold transition inline-flex items-center justify-center gap-3"
-                        >
-                            <i class="fab fa-whatsapp text-xl"></i>
-                            FALE COM UM ADVOGADO
-                        </a>
-
-                        <a 
-                            href="quem-somos.html" 
-                            class="border-2 border-[#08152d] text-[#08152d] hover:bg-[#08152d] hover:text-white px-8 lg:px-10 py-4 rounded-xl font-semibold transition inline-flex items-center justify-center gap-3"
-                        >
-                            <i class="fa-solid fa-user-tie"></i>
-                            CONHEÇA O ESCRITÓRIO
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Vídeo -->
-                <div class="lg:col-span-6">
-                    <div class="video-box rounded-[32px] p-4 lg:p-6 shadow-sm border border-gray-100">
+                    <!-- Vídeo -->
+                    <div class="lg:col-span-6">
                         <div class="video-frame">
                             <video controls playsinline preload="metadata">
                                 <source src="assets/inventario.mp4" type="video/mp4">
                                 Seu navegador não suporta a reprodução de vídeo.
                             </video>
                         </div>
-
-                        <div class="mt-6 bg-white rounded-2xl p-5 lg:p-6 border border-gray-100">
-                            <p class="uppercase tracking-[3px] text-red-700 font-semibold text-xs mb-2">
-                                Orientação inicial
-                            </p>
-
-                            <p class="text-gray-700 text-sm lg:text-base leading-relaxed">
-                                Assista ao vídeo e, se precisar de apoio para iniciar ou regularizar um inventário,
-                                fale com nossa equipe pelo WhatsApp.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Cards informativos -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6 mt-16 lg:mt-20">
-
-                <div class="info-card bg-white rounded-[24px] p-7 lg:p-8 border border-gray-100 shadow-sm">
-                    <div class="w-14 h-14 rounded-full bg-[#9d1d24]/10 text-[#9d1d24] flex items-center justify-center text-2xl mb-5">
-                        <i class="fa-solid fa-scale-balanced"></i>
                     </div>
 
-                    <h3 class="font-bold text-xl text-[#08152d] mb-3">
-                        Segurança Jurídica
-                    </h3>
-
-                    <p class="text-gray-600 leading-relaxed">
-                        Condução técnica para evitar falhas que possam gerar prejuízos ou atrasos no processo.
-                    </p>
-                </div>
-
-                <div class="info-card bg-white rounded-[24px] p-7 lg:p-8 border border-gray-100 shadow-sm">
-                    <div class="w-14 h-14 rounded-full bg-[#9d1d24]/10 text-[#9d1d24] flex items-center justify-center text-2xl mb-5">
-                        <i class="fa-solid fa-people-roof"></i>
-                    </div>
-
-                    <h3 class="font-bold text-xl text-[#08152d] mb-3">
-                        Proteção aos Herdeiros
-                    </h3>
-
-                    <p class="text-gray-600 leading-relaxed">
-                        Apoio jurídico para preservar direitos, alinhar decisões e reduzir conflitos familiares.
-                    </p>
-                </div>
-
-                <div class="info-card bg-white rounded-[24px] p-7 lg:p-8 border border-gray-100 shadow-sm">
-                    <div class="w-14 h-14 rounded-full bg-[#9d1d24]/10 text-[#9d1d24] flex items-center justify-center text-2xl mb-5">
-                        <i class="fa-solid fa-clock"></i>
-                    </div>
-
-                    <h3 class="font-bold text-xl text-[#08152d] mb-3">
-                        Mais Agilidade
-                    </h3>
-
-                    <p class="text-gray-600 leading-relaxed">
-                        Organização documental e estratégia adequada para tornar o procedimento mais eficiente.
-                    </p>
                 </div>
 
             </div>
 
         </div>
-    </section>
-
-    <!-- CTA FINAL -->
-    <section class="bg-white py-20">
-        <div class="max-w-5xl mx-auto px-4 lg:px-6 text-center">
-            <div class="bg-[#041327] rounded-[32px] p-8 lg:p-14 text-white shadow-xl">
-                <p class="uppercase tracking-[4px] text-red-300 font-semibold mb-4">
-                    Ramos Advogados Associados
-                </p>
-
-                <h2 class="logo-font text-3xl lg:text-5xl font-bold mb-6">
-                    Precisa iniciar ou regularizar um inventário?
-                </h2>
-
-                <p class="text-gray-200 text-base lg:text-lg leading-relaxed max-w-3xl mx-auto mb-9">
-                    Fale com nossa equipe e receba orientação jurídica para entender o melhor caminho para o seu caso.
-                </p>
-
-                <a 
-                    href="#" 
-                    onclick="openWhatsAppInventario()" 
-                    class="bg-red-700 hover:bg-red-800 text-white px-8 lg:px-12 py-4 lg:py-5 rounded-2xl font-semibold text-sm lg:text-lg transition inline-flex items-center gap-3"
-                >
-                    <i class="fab fa-whatsapp text-xl"></i>
-                    FALE COM UM ADVOGADO
-                </a>
-            </div>
-        </div>
-    </section>
+    </main>
 
     <!-- FOOTER -->
     <footer class="bg-[#041327] text-white py-10">
