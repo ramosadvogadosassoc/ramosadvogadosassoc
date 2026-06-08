@@ -75,18 +75,23 @@
             align-items: flex-end;
             z-index: 10;
             pointer-events: none;
+            overflow: hidden;
         }
 
         .mobile-heitor {
             width: 69%;
             object-fit: contain;
             object-position: bottom left;
+            flex-shrink: 0;
+            max-width: 50vw;
         }
 
         .mobile-rafael {
             width: 89%;
             object-fit: contain;
             object-position: bottom right;
+            flex-shrink: 0;
+            max-width: 56vw;
         }
 
         @media (max-width: 768px) {
@@ -343,6 +348,10 @@
             <h1 class="logo-font text-5xl md:text-6xl lg:text-7xl leading-tight text-white" style="text-shadow: 0 2px 16px rgba(0,0,0,0.45);">
                 UM ESCRITÓRIO FAMILIAR
             </h1>
+
+            <p class="logo-font text-lg md:text-xl lg:text-2xl text-white mt-4 leading-snug" style="text-shadow: 0 2px 12px rgba(0,0,0,0.5);">
+                Construído pela nossa família para atender os interesses e necessidades da sua!
+            </p>
 
             <div class="mt-8">
                 <a 
