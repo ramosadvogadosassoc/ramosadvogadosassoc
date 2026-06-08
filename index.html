@@ -62,8 +62,8 @@
 
         /* Rafael ajustado para ficar visualmente no mesmo tamanho */
         .lawyer-rafael {
-            right: 0;
-            height: 96vh;
+            right: -120px;
+            height: 180vh;
         }
 
         /* ==================== MOBILE ==================== */
@@ -94,7 +94,7 @@
 
         /* Mobile: Rafael maior para equilibrar com Heitor */
         .mobile-rafael {
-            width: 84%;
+            width: 168%;
         }
 
         @media (max-width: 768px) {
@@ -111,11 +111,7 @@
             }
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 20;
-        }
-
+    
         .area-card {
             transition: all 0.4s ease;
         }
@@ -213,6 +209,15 @@
                 bottom: 18px;
             }
         }
+        .hero-content {
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
     </style>
 </head>
 
@@ -334,7 +339,7 @@
         </div>
 
         <!-- Conteúdo Hero -->
-        <div class="hero-content relative z-20 max-w-4xl mx-auto text-center px-6 pt-0 lg:pt-0 -mt-72 lg:-mt-[420px]">
+        <div class="hero-content absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-6">
             <h1 class="logo-font text-5xl md:text-7xl leading-tight text-white">
                 UM ESCRITÓRIO FAMILIAR
             </h1>
